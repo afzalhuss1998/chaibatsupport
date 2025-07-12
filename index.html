@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FOR !D WhatsApp Message</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>➡️ FOR !D Message on WhatsApp</h1>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showLang('en', this)">English</div>
+    <div class="tab" onclick="showLang('hi', this)">हिन्दी</div>
+    <div class="tab" onclick="showLang('kn', this)">ಕನ್ನಡ</div>
+    <div class="tab" onclick="showLang('ta', this)">தமிழ்</div>
+    <div class="tab" onclick="showLang('te', this)">తెలుగు</div>
+  </div>
+
+  <div class="content visible" id="text">
+    ➡️ FOR !D Message on WhatsApp
+  </div>
+
+  <div class="click-direction">👇 Click below to message on WhatsApp</div>
+
+  <a href="https://wa.me/+447512029120?text=FOR%20!D" class="whatsapp-btn" target="_blank">
+    Message on WhatsApp
+  </a>
+
+  <!-- Chiabet Logo -->
+  <div class="logo">
+    <img src="assets/logo.png" alt="Chiabet Logo" />
+  </div>
+
+  <script>
+    const messages = {
+      en: "➡️ FOR !D Message on WhatsApp",
+      hi: "➡️ !D के लिए WhatsApp पर संदेश भेजें",
+      kn: "➡️ !Dಗಾಗಿ WhatsApp ನಲ್ಲಿ ಸಂದೇಶ ಕಳುಹಿಸಿ",
+      ta: "➡️ !Dக்காக WhatsApp இல் செய்தி அனுப்பவும்",
+      te: "➡️ !D కొరకు WhatsApp లో సందేశం పంపండి"
+    };
+
+    function showLang(lang, el) {
+      const content = document.getElementById("text");
+      content.classList.remove("visible");
+      setTimeout(() => {
+        content.innerText = messages[lang];
+        content.classList.add("visible");
+      }, 150);
+
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
